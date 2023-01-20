@@ -31,7 +31,7 @@ export LD_LIBRARY_PATH="$SNAP/lib/mjpg-streamer:$SNAP/usr/lib/$ARCH:$SNAP/usr/li
 
 if [ "$1" = "-d" ]; then
     if [ "$DAEMON" = "true" ]; then
-        mjpg_streamer -i "$INPUTOPTS" -o "output_http.so -w $SNAP_DATA/www $PORT"
+        mjpg_streamer "$INPUTOPTS $OUTPUTOPTS $PORT $INPUTOPTS2 $OUTPUTOPTS2 $PORT2 $INPUTOPTS3 $OUTPUTOPTS3 $PORT3"
     else
         exit 0
     fi
